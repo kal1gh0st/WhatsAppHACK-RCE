@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://web.whatsapp.com/ -->
+<html class="js serviceworker adownload cssanimations csstransitions webp webp-alpha webp-animation webp-lossless wf-roboto-n4-active wf-opensans-n4-active wf-opensans-n6-active wf-roboto-n3-active wf-roboto-n5-active wf-active"
+      dir="ltr" loc="it" lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WhatsApp</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="description" content="Quickly send and receive WhatsApp messages right from your computer.">
+    <meta name="og:description" content="Quickly send and receive WhatsApp messages right from your computer.">
+    <meta name="og:url" content="https://web.whatsapp.com/">
+    <meta name="og:title" content="WhatsApp Web">
+    <meta name="og:image" content="https://www.whatsapp.com/img/whatsapp-promo.png">
+
+    <link id="favicon" rel="shortcut icon" href="https://web.whatsapp.com/img/c5088e888c97ad440a61d247596f88e5.png"
+          type="image/png">
+    <link rel="apple-touch-icon" sizes="194x194" href="https://web.whatsapp.com/apple-touch-icon.png" type="image/png">
+
+    <link rel="stylesheet" id="style" href="../WhatsApp_files/style_f8c40d12edbd6fe7b2cd055344892b0e.css">
+    <link rel="stylesheet" href="../WhatsApp_files/cssm_802389b838f35c577965ddb36e9efafe.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <style>
+        html, body, #app {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        #app {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #startup, #initial_startup {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: #f2f2f2;
+
+            -moz-user-select: none;
+            -webkit-user-select: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            flex-direction: column;
+            -webkit-flex-direction: column;
+        }
+
+        .spinner-container {
+            -webkit-animation: rotate 2s linear infinite;
+            animation: rotate 2s linear infinite;
+            z-index: 2;
+        }
+
+        .spinner-path {
+            stroke-dasharray: 1, 150;
+            stroke-dashoffset: 0;
+            stroke: #acb9bf;
+            stroke-linecap: round;
+            -webkit-animation: dash 1.5s ease-in-out infinite;
+            animation: dash 1.5s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes dash {
+            0% {
+                stroke-dasharray: 1, 150;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -35;
+            }
+            100% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -124;
+            }
+        }
+
+        @-webkit-keyframes dash {
+            0% {
+                stroke-dasharray: 1, 150;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -35;
+            }
+            100% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -124;
+            }
+        }
+
+        .progress-container {
+            width: 360px;
+            position: fixed;
+            padding-top: 120px;
+            top: 50%;
+            left: 50%;
+            margin-left: -180px;
+        }
+
+        progress {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 3px;
+            border: none;
+            margin: 0;
+            color: #02d1a4;
+            background-color: #e0e4e5;
+        }
+
+        progress[value]::-webkit-progress-bar {
+            background-color: #e0e4e5;
+        }
+
+        progress[value]::-webkit-progress-value {
+            background-color: #02d1a4;
+        }
+
+        progress[value]::-moz-progress-bar {
+            background-color: #02d1a4;
+        }
+    </style>
+    <style></style>
+    <!--<script id="progress_script_/vendor1.798c10131204a6dd5a60.js" type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/vendor1.798c10131204a6dd5a60.js"></script>
+    <script id="progress_script_/vendor2.030d3590e07b379cf716.js" type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/vendor2.030d3590e07b379cf716.js"></script>
+    <script id="progress_script_/app.64a8244e94e2ac709ce3.js" type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/app.64a8244e94e2ac709ce3.js"></script>
+    <link rel="stylesheet" href="../WhatsApp_files/css" media="all">
+    <script id="progress_script_/app2.21d7ecd5365c41195f92.js" type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/app2.21d7ecd5365c41195f92.js"></script>
+    <style id="asset-style" type="text/css"></style>
+    <script type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/svg.fcfedfd24fdb10d3c108.js"></script>
+    <script type="text/javascript" charset="utf-8" async=""
+            src="../WhatsApp_files/app2.21d7ecd5365c41195f92.js"></script> -->
+</head>
+<body class="web">
+<div id="app">
+    <div class="_1FKgS app-wrapper-web bN4GZ"><span></span>
+        <div class="_2U_Zc">
+            <div class="_2G3cZ"><span class="_3CSsZ"><svg xmlns="http://www.w3.org/2000/svg" width="39" height="39"
+                                                          viewBox="0 0 39 39"><path fill="#00E676"
+                                                                                    d="M10.7 32.8l.6.3c2.5 1.5 5.3 2.2 8.1 2.2 8.8 0 16-7.2 16-16 0-4.2-1.7-8.3-4.7-11.3s-7-4.7-11.3-4.7c-8.8 0-16 7.2-15.9 16.1 0 3 .9 5.9 2.4 8.4l.4.6-1.6 5.9 6-1.5z"></path><path
+                    fill="#FFF"
+                    d="M32.4 6.4C29 2.9 24.3 1 19.5 1 9.3 1 1.1 9.3 1.2 19.4c0 3.2.9 6.3 2.4 9.1L1 38l9.7-2.5c2.7 1.5 5.7 2.2 8.7 2.2 10.1 0 18.3-8.3 18.3-18.4 0-4.9-1.9-9.5-5.3-12.9zM19.5 34.6c-2.7 0-5.4-.7-7.7-2.1l-.6-.3-5.8 1.5L6.9 28l-.4-.6c-4.4-7.1-2.3-16.5 4.9-20.9s16.5-2.3 20.9 4.9 2.3 16.5-4.9 20.9c-2.3 1.5-5.1 2.3-7.9 2.3zm8.8-11.1l-1.1-.5s-1.6-.7-2.6-1.2c-.1 0-.2-.1-.3-.1-.3 0-.5.1-.7.2 0 0-.1.1-1.5 1.7-.1.2-.3.3-.5.3h-.1c-.1 0-.3-.1-.4-.2l-.5-.2c-1.1-.5-2.1-1.1-2.9-1.9-.2-.2-.5-.4-.7-.6-.7-.7-1.4-1.5-1.9-2.4l-.1-.2c-.1-.1-.1-.2-.2-.4 0-.2 0-.4.1-.5 0 0 .4-.5.7-.8.2-.2.3-.5.5-.7.2-.3.3-.7.2-1-.1-.5-1.3-3.2-1.6-3.8-.2-.3-.4-.4-.7-.5h-1.1c-.2 0-.4.1-.6.1l-.1.1c-.2.1-.4.3-.6.4-.2.2-.3.4-.5.6-.7.9-1.1 2-1.1 3.1 0 .8.2 1.6.5 2.3l.1.3c.9 1.9 2.1 3.6 3.7 5.1l.4.4c.3.3.6.5.8.8 2.1 1.8 4.5 3.1 7.2 3.8.3.1.7.1 1 .2h1c.5 0 1.1-.2 1.5-.4.3-.2.5-.2.7-.4l.2-.2c.2-.2.4-.3.6-.5s.4-.4.5-.6c.2-.4.3-.9.4-1.4v-.7s-.1-.1-.3-.2z"></path></svg></span>
+                <div class="_26w8r">WhatsApp Web</div>
+            </div>
+            <div class="_2NbD3">
+                <div class="elDYX">
+                    <div class="dXU0Q">
+                        <div class="_2mVeK">Per usare WhatsApp sul tuo computer:</div>
+                        <ol class="_3oE3H">
+                            <li class="_2eNdO">Apri WhatsApp sul tuo telefono</li>
+                            <li class="_2eNdO"><span dir="ltr" class="selectable-text invisible-space copyable-text">Tocca <strong><span
+                                    dir="ltr" class="selectable-text invisible-space copyable-text">Menù <span
+                                    class="_3CSsZ"><svg height="24px" viewBox="0 0 24 24" width="24px"><rect
+                                    fill="#f2f2f2" height="24" rx="3" width="24"></rect><path
+                                    d="m12 15.5c.825 0 1.5.675 1.5 1.5s-.675 1.5-1.5 1.5-1.5-.675-1.5-1.5.675-1.5 1.5-1.5zm0-2c-.825 0-1.5-.675-1.5-1.5s.675-1.5 1.5-1.5 1.5.675 1.5 1.5-.675 1.5-1.5 1.5zm0-5c-.825 0-1.5-.675-1.5-1.5s.675-1.5 1.5-1.5 1.5.675 1.5 1.5-.675 1.5-1.5 1.5z"
+                                    fill="#818b90"></path></svg></span></span></strong> o <strong><span dir="ltr"
+                                                                                                        class="selectable-text invisible-space copyable-text">Impostazioni <span
+                                    class="_3CSsZ"><svg width="24" height="24" viewBox="0 0 24 24"><rect fill="#F2F2F2"
+                                                                                                         width="24"
+                                                                                                         height="24"
+                                                                                                         rx="3"></rect><path
+                                    d="M9.34 8.694a4.164 4.164 0 0 0-1.606 3.289c0 1.338.63 2.528 1.61 3.292l-1.46 2.527a7.065 7.065 0 0 1-3.052-5.82c0-2.41 1.206-4.54 3.048-5.816l1.46 2.528zm6.713 2.859c-.217-2.079-1.992-3.739-4.148-3.739-.578 0-1.128.116-1.628.329L8.819 5.617a7.042 7.042 0 0 1 3.086-.704c3.76 0 6.834 2.958 7.059 6.64h-2.91zm-1.065.43a3.083 3.083 0 1 1-6.166 0 3.083 3.083 0 0 1 6.166 0zm-6.164 6.364l1.458-2.523a4.153 4.153 0 0 0 1.623.322 4.154 4.154 0 0 0 4.12-3.524h2.922a7.062 7.062 0 0 1-7.042 6.426c-1.105 0-2.15-.25-3.081-.7zm11.197-7.21a7.88 7.88 0 0 0-.404-1.824l.286-.12a.527.527 0 0 0-.403-.973l-.29.12a8.176 8.176 0 0 0-1.197-1.77l.231-.23a.526.526 0 1 0-.744-.744l-.234.234a8.17 8.17 0 0 0-1.775-1.18l.13-.31a.526.526 0 1 0-.972-.403l-.12.313a8.463 8.463 0 0 0-1.995-.405v-.35A.533.533 0 0 0 12 2.97a.533.533 0 0 0-.535.526v.338a8.02 8.02 0 0 0-2.173.416l-.13-.313a.526.526 0 0 0-.972.402l.129.311a8.171 8.171 0 0 0-1.775 1.18l-.235-.235a.526.526 0 0 0-.743.744l.23.231A8.175 8.175 0 0 0 4.6 8.34l-.29-.12a.526.526 0 0 0-.403.971l.285.122a7.882 7.882 0 0 0-.404 1.824h-.322a.533.533 0 0 0-.526.534c0 .29.235.535.526.535h.28c.02.831.166 1.624.418 2.378l-.257.1a.523.523 0 1 0 .402.968l.252-.105a8.17 8.17 0 0 0 1.191 1.797l-.187.187a.526.526 0 1 0 .744.743l.184-.183a8.173 8.173 0 0 0 1.792 1.208l-.096.231a.526.526 0 1 0 .972.403l.096-.23c.698.24 1.436.387 2.208.428v.243c0 .29.244.526.535.526.29 0 .534-.235.534-.526v-.253a8.012 8.012 0 0 0 2.03-.417l.09.229a.523.523 0 1 0 .967-.403l-.096-.231a8.172 8.172 0 0 0 1.792-1.208l.184.183a.526.526 0 1 0 .743-.744l-.187-.186a8.174 8.174 0 0 0 1.191-1.798l.252.104a.526.526 0 1 0 .403-.971l-.257-.095a8.074 8.074 0 0 0 .417-2.378h.281c.29 0 .526-.244.526-.535a.533.533 0 0 0-.526-.534h-.323z"
+                                    fill="#818B90"></path></svg></span></span></strong> e seleziona <strong>WhatsApp Web</strong></span>
+                            </li>
+                            <li class="_2eNdO">Rivolgi il tuo telefono verso questo schermo per acquisire il codice</li>
+                        </ol>
+                    </div>
+                    <div class="XSdna">
+                        <div class="_2EZ_m _1i65u"
+                             data-ref="1@KptdAkQRLgZ5OQny9JYwCuJfCphRiw9b8p/L5F4YBZtG2gPQ3TSYOTDA,GiGuHEM0K+A/GEr+kNhDx2fiz9Jv67uiE50y9Q+MWis=,61xTCcHl7HW3zE5B3JdO8A=="
+                             style="">
+                            <div class="_1jjYO"><span class="_3CSsZ" style="opacity: 1; z-index: -99999;"><svg xmlns="http://www.w3.org/2000/svg" width="64"
+                                                                          height="64" viewBox="0 0 64 64" style="opacity: 1; z-index: -99999;"><path
+                                    fill="#FFF"
+                                    d="M6.525 43.936a29.596 29.596 0 0 1-3.039-13.075C3.494 14.568 16.755 1.313 33.05 1.313c7.904.004 15.328 3.082 20.91 8.666 5.581 5.586 8.653 13.01 8.65 20.907-.007 16.294-13.266 29.549-29.558 29.549a29.648 29.648 0 0 1-12.508-2.771L1.391 62.687l5.134-18.751z"></path><path
+                                    fill="#123033"
+                                    d="M50.801 13.135c-4.739-4.742-11.039-7.354-17.752-7.357-13.837 0-25.094 11.253-25.099 25.085a25.039 25.039 0 0 0 3.349 12.541l-3.56 12.999 13.304-3.488a25.084 25.084 0 0 0 11.996 3.054h.011c13.83 0 25.088-11.256 25.095-25.087.002-6.703-2.607-13.005-7.344-17.747zM33.05 51.733h-.008a20.866 20.866 0 0 1-10.62-2.906l-.762-.452-7.894 2.07 2.108-7.694-.497-.789a20.802 20.802 0 0 1-3.189-11.097c.004-11.496 9.361-20.85 20.87-20.85a20.73 20.73 0 0 1 14.746 6.115 20.733 20.733 0 0 1 6.104 14.752c-.006 11.497-9.363 20.851-20.858 20.851z"></path><path
+                                    fill="#123033"
+                                    d="M25.429 19.26a8.65 8.65 0 0 0-1.028.011 2.352 2.352 0 0 0-.95.255c-.221.114-.427.277-.75.582-.305.288-.481.54-.668.782a6.974 6.974 0 0 0-1.443 4.291l.001.003a8.243 8.243 0 0 0 .844 3.607c1.043 2.307 2.763 4.746 5.035 7.008a24.676 24.676 0 0 0 1.657 1.6 24.145 24.145 0 0 0 9.814 5.229s.751.179 1.391.218c.021.001.04.003.061.003a9.207 9.207 0 0 0 1.422-.033 5.086 5.086 0 0 0 2.129-.59c.423-.225.623-.337.978-.561 0 0 .11-.072.319-.23.345-.257.558-.438.845-.736.211-.22.394-.479.534-.772.2-.417.401-1.213.481-1.874.061-.505.042-.781.036-.952-.011-.275-.238-.558-.487-.678l-1.486-.668s-2.222-.967-3.581-1.587a1.278 1.278 0 0 0-.452-.104c-.341-.021-.723.068-.966.324v-.004c-.013-.001-.182.145-2.031 2.385-.102.122-.341.387-.754.362a1.086 1.086 0 0 1-.185-.029 3.402 3.402 0 0 1-.49-.17c-.316-.134-.427-.185-.643-.278l-.013-.006a15.361 15.361 0 0 1-4.013-2.556 15.88 15.88 0 0 1-.927-.885c-1.074-1.041-1.953-2.148-2.607-3.24-.035-.06-.09-.146-.15-.242-.107-.174-.225-.381-.262-.523-.095-.376.157-.678.157-.678s.622-.68.911-1.05c.278-.356.518-.704.671-.952.301-.484.39-.982.238-1.37a216.767 216.767 0 0 0-2.219-5.215c-.156-.339-.598-.589-1.005-.636a6.284 6.284 0 0 0-.414-.041"></path></svg></span>
+                            </div>
+                            <canvas width="264" height="264" style="display: none;"></canvas>
+                            <img alt="Scan me!"
+                                 src="data:image/png;base64,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"
+                                 style="display: block; opacity: 1"></div>
+                    </div>
+                    <a href="https://faq.whatsapp.com/faq/web/28080003/" class="_1rQYj" target="_blank">Hai bisogno
+                        d'aiuto per iniziare?</a>
+                    <div class="_2FvAY"><span></span><label><input type="checkbox" name="rememberMe" value="on" checked>Resta
+                        connesso</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<script src="../WhatsApp_files/progress.ba51a757409fb1336a269cf25611cd24.js"></script>
+
+
+<script src="../WhatsApp_files/it.cb570ea65e5370d4d26f.js"></script>-->
+<script src="../WhatsApp_files/qreload.js"></script>
+
+
+</body>
+</html>
