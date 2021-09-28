@@ -17,7 +17,7 @@ DO NOT USE ON REAL VICTIMS FOR ANY REASON. CRIMINAL LAW WILL APPLY.
 ## usage
 clone the repo:
         
-    git clone https://github.com/raptored01/whatsapp_hack.git
+    git clone https://github.com/kal1gh0st/WhatsAppHACK-RCE/whatsapp_hack.git
 
 install the requirements
 
