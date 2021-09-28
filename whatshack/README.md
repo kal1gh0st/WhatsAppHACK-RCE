@@ -1,7 +1,6 @@
 # WhatsHack v1.1
-## Author: https://github.com/thelinuxchoice/whatshack
+## Author: https://github.com/kal1gh0st/WhatsAppHACK-RCE/whatshack
 ## IG: https://www.instagram.com/linux_choice
-### Don't copy this code without give me the credits, nerd! 
 
 Script to generate Android App to Hack All WhatsApp Media Files.
 
