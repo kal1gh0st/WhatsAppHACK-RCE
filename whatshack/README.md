@@ -5,8 +5,8 @@ Script to generate Android App to Hack All WhatsApp Media Files.
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg" alt="bash" width="40" height="40"/>
     </p>
 
-![whats1](https://user-images.githubusercontent.com/34893261/44965650-0948c600-af0d-11e8-9ae3-3c771eade60b.png)
-![whats2](https://user-images.githubusercontent.com/34893261/44965651-09e15c80-af0d-11e8-95fa-3d53a92352b8.png)
+![image](https://user-images.githubusercontent.com/56889513/138261740-6e245c6f-b427-4af0-b9fc-0049beacf3e6.png)
+
 
 
 ### Features:
