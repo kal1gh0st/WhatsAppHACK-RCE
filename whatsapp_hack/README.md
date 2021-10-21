@@ -1,5 +1,8 @@
 # whatsapp_hack
 Hack whatsapp web via a cloned website
+<p align="left">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="pyton" width="40" height="40"/>
+    </p>
 
 ## requirements
  - Python >= 3.6.3
