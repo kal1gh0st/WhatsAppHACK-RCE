@@ -1,5 +1,8 @@
 # whatsapp_rce
 whatsapp remote code execution
+<p align="left">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/>
+    </p>
 
 CVE-2019-11932
 https://awakened1712.github.io/hacking/hacking-whatsapp-gif-rce/
